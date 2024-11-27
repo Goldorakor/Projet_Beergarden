@@ -150,6 +150,18 @@ nav {
 
 
 
+/* la partie principale sera affichée en colonnes */
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* on occupe toute la largeur de l'écran */
+}
+
+
+
 #bandeau {
     width: 100vw;
     height: 20vh;
@@ -171,9 +183,10 @@ nav {
 }
 
 
+
 .contenu {
-    width: 100 vh;
-    height: 45vh;
+    width: 100 vw;
+    height: 50vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -190,6 +203,8 @@ nav {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    width: 50vw;
+    height: 50vw;
 }
 
 
@@ -197,18 +212,35 @@ nav {
 
 /* on gère la zone image du contenu principal */
 .illustration {
-    background-image: ;
-
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #tireuse {
-    background-image: url(../img//h5-el-holder-img-1-1.jpg)
+    background-image: url(../img/h5-el-holder-img-1-1.jpg);
+    background-size: cover;
 }
 
 #clients {
-    background-image: url(../img//h5-el-holder-img-1-1.jpg)
+    background-image: url(../img/h5-el-holder-img-2.jpg);
+    background-size: cover;
 }
 
+#tireuse img {
+    height: 45vh; /* le logo doit prendre 90% de la hauteur de l'écran */
+    object-fit: cover;
+    padding: 20px;
+ }
 
+ #clients img {
+    height: 45vh; /* le logo doit prendre 90% de la hauteur de l'écran */
+    object-fit: cover;
+    padding: 20px;
+ }
 
 /* on gère la zone descriptive du contenu principal */
