@@ -1,0 +1,214 @@
+/* je commence par calibrer ma page pour éviter tout comportement indésirable */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+
+
+/*
+<uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 200 to 700
+
+.oswald-<uniquifier> {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+
+
+
+:root {
+    --marron: #c59d5f;
+    --white: #ffffff;
+    --black: #000000;
+    --taille1 : 60px;
+  }
+
+
+
+/* je veux que le conteneur 'container' traite les objets header, main et footer en affichage colonne, centré le long de l'axe principal et centré le long de l'axe secondaire */
+#container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* on occupe toute la largeur de l'écran */
+}
+
+
+
+/* je veux que le conteneur 'header' traite les objets nav et #biglogo en affichage colonne, centré le long de l'axe principal et centré le long de l'axe secondaire */
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../img/h5-revolution-img-1.jpg");
+    background-size: cover; /* pour que l'image ne soit pas répétée mais occupe tout l'espace, quitte à se rogner par endroit */
+    width: 100vw; /* pourquoi devoir le préciser à nouveau ? */
+}
+
+
+
+/* je veux que le conteneur 'nav' traite les objets #revolver, #menu et #reseaux en affichage ligne, en space-between le long de l'axe principal et centré le long de l'axe secondaire */
+/* je ferai en sorte que #revolver et #reseaux occupent 25% de la largeur chacun et #menu occupe 50% de la largeur */
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 10vh; /* la barre de navigation doit prendre 10% de la hauteur de l'écran, le logo occupera les 90% restants */
+    /* background-color: var(--black); */
+    background: rgb(0 0 0 / 40%);
+
+}
+
+
+
+#revolver {
+    color: var(--white);
+    padding: 40px; /* on veut espacer les éléments 'a' de reseaux */
+}
+
+
+
+#revolver:hover {
+    color: var(--marron)
+}
+
+
+
+/* je veux que le conteneur '#menu' traite les objets home, tradition, service, menu et contact en affichage ligne, centré le long de l'axe principal et centré le long de l'axe secondaire */
+#meunu > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type:none; /* pour enlever les ronds des listes à puce */
+}
+
+
+
+#meunu a {
+    padding: 40px; /* on veut espacer les éléments 'a' de meunu */
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+
+#meunu a:hover {
+    color: var(--marron);
+}
+
+
+
+
+/* je veux que le conteneur '#reseaux' traite les objets twitter, fb et instagram en affichage ligne, en flex-end le long de l'axe principal et centré le long de l'axe secondaire */
+#reseaux > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type:none; /* pour enlever les ronds des listes à puce */
+}
+
+
+
+#reseaux a {
+    padding: 40px; /* on veut espacer les éléments 'a' de reseaux */
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+
+#reseaux a:hover {
+    color: var(--marron);
+}
+
+
+
+#biglogo img {
+    height: 90vh; /* le logo doit prendre 90% de la hauteur de l'écran */
+    object-fit: cover;
+    padding: 80px;
+ }
+
+
+
+#bandeau {
+    width: 100vw;
+    height: 20vh;
+    background-color: var(--marron);
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 6vh;
+    font-size: var(--taille1);
+
+
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.contenu {
+    width: 100 vh;
+    height: 45vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* on gère la zone image du contenu principal */
+.illustration {
+    background-image: ;
+
+}
+
+#tireuse {
+    background-image: url(../img//h5-el-holder-img-1-1.jpg)
+}
+
+#clients {
+    background-image: url(../img//h5-el-holder-img-1-1.jpg)
+}
+
+
+
+/* on gère la zone descriptive du contenu principal */
