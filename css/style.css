@@ -1,3 +1,12 @@
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+RACINE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
 /* je commence par calibrer ma page pour éviter tout comportement indésirable */
 * {
     margin: 0;
@@ -5,7 +14,6 @@
     box-sizing: border-box;
     font-family: serif;
 }
-
 
 
 /*
@@ -20,14 +28,32 @@
 }
 */
 
+/*
+<uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900
+
+.raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
 
 
 
 :root {
     --marron: #c59d5f;
-    --white: #ffffff;
-    --black: #000000;
+    --blanc: #ffffff;
+    --noir: #000000;
+    --gris: #b3b3b3;
     --taille1 : 60px;
+    --taille2 : 48px;
+    --taille3 : 36px;
+    --taille4 : 24px;
+    --taille5 : 16px;
+    --taille6 : 12px;
+    --taille7 : 18px;
   }
 
 
@@ -41,6 +67,19 @@
     align-items: center;
     width: 100vw; /* on occupe toute la largeur de l'écran */
 }
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+HEADER
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 
 
@@ -71,14 +110,20 @@ nav {
     height: 10vh; /* la barre de navigation doit prendre 10% de la hauteur de l'écran, le logo occupera les 90% restants */
     /* background-color: var(--black); */
     background: rgb(0 0 0 / 40%);
+    position: fixed; /* pour avoir une position de navbar fixe -> elle reste visible et en haut de la page, pdt le défilement de la page */
 
 }
 
 
 
 #revolver {
-    color: var(--white);
-    padding: 40px; /* on veut espacer les éléments 'a' de reseaux */
+    color: var(--blanc);
+    padding: 40px; /* on veut espacer le bloc revolver du bord de gauche -> revolver est un élément de la navbar */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--taille3);
 }
 
 
@@ -102,9 +147,14 @@ nav {
 
 
 #meunu a {
-    padding: 40px; /* on veut espacer les éléments 'a' de meunu */
-    color: var(--white);
+    padding: 30px; /* on veut espacer les éléments 'a' de meunu */
+    color: var(--blanc);
     text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--taille4);
 }
 
 
@@ -124,13 +174,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     list-style-type:none; /* pour enlever les ronds des listes à puce */
+    padding: 40px; /* utile pour donner de l'espace au bloc composé des 3 icons de réseaux sociaux, par rapport au bord droit */
 }
 
 
 
 #reseaux a {
-    padding: 40px; /* on veut espacer les éléments 'a' de reseaux */
-    color: var(--white);
+    padding: 20px; /* on veut espacer les éléments 'a' de reseaux -> nos 3 petits icons */
+    color: var(--blanc);
     text-decoration: none;
 }
 
@@ -141,12 +192,36 @@ nav {
 }
 
 
+/* la taille des logos n'est pas satisfaisante sans cette portion*/
+#reseaux i {
+    font-size: 30px; /* l'icone est considéré comme du texte -> cette propriété fonctionne donc correctement */
+}
+
+
+
+
 
 #biglogo img {
-    height: 90vh; /* le logo doit prendre 90% de la hauteur de l'écran */
-    object-fit: cover;
-    padding: 80px;
- }
+    height: 90vh; /* le logo doit prendre 90% de la hauteur de l'écran -> influe sur la taille de l'icone marron*/
+    /* object-fit: cover; ne sert strictement à rien ici */ 
+    padding-top: 16vh;  /* influe sur l'espace entre l'icone marron et la navbar */
+}
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+MAIN
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
 
 
 
@@ -164,26 +239,31 @@ main {
 
 #bandeau {
     width: 100vw;
-    height: 20vh;
+    height: 30vh;
     background-color: var(--marron);
-    color: var(--white);
+    color: var(--blanc);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    padding: 6vh;
-    font-size: var(--taille1);
-
+    padding: 10vh; /* on veut avoir un tiers de marge en haut et en bas et un tiers de zone textuelle */
 
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
+
+    font-size: var(--taille1);
+    text-align: justify;
+
+     
+
+    line-height: 1em; /* pour gérer l'espace entre chaque ligne d'un paragraphe -> vers 0, les lignes se superposent, vers 1, l'espace est faible, vers des gros chiffres, l'esace augmente fortement */
 }
 
 
-
+/* on gère le conteneur qui contient une zone texte et une zone illustrative */
 .contenu {
     width: 100 vw;
     height: 50vw;
@@ -192,10 +272,12 @@ main {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
 }
 
 
+
+
+/* on gère la zone descriptive du contenu principal class='contenu' */
 
 .description {
     display: flex;
@@ -208,9 +290,65 @@ main {
 }
 
 
+.description h1 {
+    color: var(--noir);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: var(--taille1);
+}
 
 
-/* on gère la zone image du contenu principal */
+.description h2 {
+    color: var(--noir);
+    font-family: 'Times New Roman', Times, sans-serif; /* je n'importe rien, cette police de caractère est déjà intégrée à mon éditeur de code */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    font-size: var(--taille4);
+}
+
+
+.description p {
+    color: var(--gris);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+    font-size: var(--taille7);
+    text-align: center;
+}
+
+
+.description .bouton {
+    color: var(--blanc);
+    background-color: var(--marron);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: var(--taille4);
+}
+
+
+
+
+/* on gère la zone image du contenu principal class='contenu' */
+
 .illustration {
     width: 50vw;
     height: 50vw;
@@ -231,16 +369,102 @@ main {
     background-size: cover;
 }
 
+/* pareil que #biglogo img sauf que je n'ai pas besoin de padding car je centre le logo sur l'image */
 #tireuse img {
-    height: 45vh; /* le logo doit prendre 90% de la hauteur de l'écran */
-    object-fit: cover;
-    padding: 20px;
- }
+    height: 65%; /* le logo doit prendre 65% de la hauteur du conteneur parent */
+    /* padding: 20px; */
+}
 
+/* pareil que #biglogo img sauf que je n'ai pas besoin de padding car je centre le logo sur l'image */
  #clients img {
-    height: 45vh; /* le logo doit prendre 90% de la hauteur de l'écran */
-    object-fit: cover;
-    padding: 20px;
- }
+    height: 65%; /* le logo doit prendre 65% de la hauteur du conteneur parent */
+    /* padding: 20px; */
+}
 
-/* on gère la zone descriptive du contenu principal */
+
+
+#galerie {
+    width: 100vw;
+    height: 25vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.gal {
+    width: 25%;
+    height: 100%;
+}
+
+.gal > img {
+     object-fit: cover;
+}
+
+
+.gal:hover {
+    background-color: var(--marron);
+    background-size: cover;
+}
+
+.gal > img:hover {
+    display: none;
+}
+
+
+
+
+#services {
+    width: 100vw;
+    height: 12vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.carte {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ikon {
+    padding: 20px;
+}
+
+
+.ikon img:hover {
+    background-color: var(--marron);
+}
+
+
+#paralaxe {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    background-image: url(../img/h5-el-holder-img-1-1.jpg);
+    background-size: cover;
+}
+
+
+#paralaxe h1 {
+  
+}
+
+#paralaxe p {
+  
+}
