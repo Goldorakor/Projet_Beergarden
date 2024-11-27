@@ -455,16 +455,74 @@ main {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100%;
-    background-image: url(../img/h5-el-holder-img-1-1.jpg);
+    height: 30vh;
+    background-image: url(../img/h5-parallax-img-2.jpg);
     background-size: cover;
 }
 
 
 #paralaxe h1 {
-  
+    color: var(--blanc);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: var(--taille1);
 }
 
+
 #paralaxe p {
-  
+    color: var(--blanc);
+    font-family: 'Times New Roman', Times, sans-serif; /* je n'importe rien, cette police de caractère est déjà intégrée à mon éditeur de code */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    font-size: var(--taille4);
 }
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+FOOTER
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--noir);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 20vh;
+
+}
+
+.footer img {
+    object-fit: cover;
+}
+
+
+
