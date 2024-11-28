@@ -400,20 +400,26 @@ main {
     height: 100%;
 }
 
-.gal > img {
+.gal img {
+    width: 100%; /* nécessaires pour que l'image épouse bien tout le conteneur */
+    height: 100%; /* pareil que ligne au dessus */
      object-fit: cover;
 }
 
 
+/*
 .gal:hover {
     background-color: var(--marron);
     background-size: cover;
+    {}
 }
+*/
 
+/*
 .gal > img:hover {
     display: none;
 }
-
+*/
 
 
 
@@ -438,14 +444,58 @@ main {
     align-items: center;
 }
 
+
 .ikon {
     padding: 20px;
 }
 
 
-.ikon img:hover {
+.ikon:hover {
     background-color: var(--marron);
+    border-radius: 50%;
 }
+
+
+.ikon:hover + h3 { /* pour cibler le <h3> qui suit directement .ikon quand .ikon est survolé */
+    color: var(--marron); /* Le texte du titre devient marron */
+}
+
+/*
+
+.ikon:hover -> quand la souris passe sur l'élément ayant la classe ikon.
++ h3 (sélecteur CSS adjacent) -> appliquer le style au premier élément <h3> qui vient juste après l'élément .ikon dans le HTML.
+!!! Ce sélecteur fonctionne uniquement si <h3> est directement après .ikon dans la structure HTML, sans aucun autre élément entre les deux. !!!
+
+*/
+
+
+
+.carte h3 {
+    color: var(--noir);
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: var(--taille4);
+}
+
+.carte p {
+    color: var(--gris);
+    padding-top: 0px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+    font-size: var(--taille7);
+    text-align: center;
+}
+
 
 
 #paralaxe {
@@ -523,6 +573,5 @@ footer {
 .footer img {
     object-fit: cover;
 }
-
 
 
